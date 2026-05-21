@@ -88,7 +88,7 @@ const skillGroups = [
 
 const educationList = [
   {
-    title: "BSc (Hons) in Information Technology",
+    title: "BSc (Hons) in Information Technology Specialization in Information Technology",
     institute: "SLIIT",
     duration: "2022 – 2026",
     location: "Malabe, Sri Lanka",
