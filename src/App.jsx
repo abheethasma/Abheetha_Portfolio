@@ -119,6 +119,23 @@ const educationList = [
   },
 ];
 
+const experienceList = [
+  {
+    title: "QA Engineer",
+    company: "Ceylon Dazzling Dev Holdings (PVT) LTD",
+    duration: "1.5 Years",
+    description:
+      "Experienced Quality Assurance Engineer with 1.5 years of expertise in executing both manual and automated testing workflows to ensure robust software quality. Proficient in identifying system defects, designing comprehensive test cases, and building automated scripts to streamline regression and end-to-end testing.",
+  },
+  {
+    title: "QA Engineering Intern",
+    company: "People’s Bank (Head Office)",
+    duration: "6 Months",
+    description:
+      "Completed a 6-month internship focusing on User Acceptance Testing (UAT) for the People’s Pay mobile app. Gained practical experience in test case design, defect identification, test execution, and collaboration with the development team to ensure application quality.",
+  },
+];
+
 const projects = [
   {
     title: "People’s Pay Mobile App – UAT Testing",
@@ -387,26 +404,28 @@ function App() {
             <SectionTitle
               kicker="Experience"
               title="Professional Experience"
-              subtitle="Hands-on industrial experience in quality assurance and application testing."
+              subtitle="Hands-on industrial experience in quality assurance, manual testing, automation testing, and application quality improvement."
             />
 
-            <div className="card experience-card scroll-reveal reveal-up">
-              <div className="experience-top">
-                <div>
-                  <h3>QA Engineering Intern</h3>
-                  <p>People’s Bank (Head Office)</p>
+            <div className="experience-list">
+              {experienceList.map((experience, index) => (
+                <div
+                  className="card experience-card scroll-reveal reveal-up"
+                  style={{ "--delay": `${index * 90}ms` }}
+                  key={`${experience.title}-${experience.company}`}
+                >
+                  <div className="experience-top">
+                    <div>
+                      <h3>{experience.title}</h3>
+                      <p>{experience.company}</p>
+                    </div>
+
+                    <span className="pill">{experience.duration}</span>
+                  </div>
+
+                  <p className="experience-text">{experience.description}</p>
                 </div>
-
-                <span className="pill">6 Months</span>
-              </div>
-
-              <p className="experience-text">
-                Completed a 6-month internship focusing on User Acceptance
-                Testing (UAT) for the People’s Pay mobile app. Gained practical
-                experience in test case design, defect identification, test
-                execution, and collaboration with the development team to ensure
-                application quality.
-              </p>
+              ))}
             </div>
           </div>
         </section>
